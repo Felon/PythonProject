@@ -24,3 +24,8 @@ class ProductPageLocators:
     ALERT_BOOK_PRICE = (By.CSS_SELECTOR, ".alert-info .alertinner strong")
     ADDED_BOOK_NAME = (By.CSS_SELECTOR, '.col-sm-4 a')
     ADDED_BOOK_PRICE = (By.CSS_SELECTOR, '.col-sm-1 p')
+
+
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
