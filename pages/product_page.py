@@ -7,8 +7,9 @@ class ProductPage(BasePage):
         add_product = self.browser.find_element(*ProductPageLocators.BUTTON_ADD_TO_BASKET)
         add_product.click()
         self.solve_quiz_and_get_code()
-        self.should_be_message_contain_book_name()
-        self.should_be_message_contain_the_same_price()
+
+        #self.should_be_message_contain_book_name()
+        #self.should_be_message_contain_the_same_price()
 
     def go_to_basket(self):
         basket = self.browser.find_element(*ProductPageLocators.BUTTON_VIEW_BASKET)
@@ -41,6 +42,13 @@ class ProductPage(BasePage):
     def should_be_price_added(self):
         book_price = self.is_element_present(*ProductPageLocators.ADDED_BOOK_PRICE)
         assert book_price, "No added price"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ALERT_MESSAGE), "Success message is presented, but should not be"
+
+    def should_not_stay_be_success_message(self):
+        assert self.is_disappeared(*ProductPageLocators.ALERT_MESSAGE), \
+            "Success message is not disappeared, but must be"
 
 
 
