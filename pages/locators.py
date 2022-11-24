@@ -1,3 +1,4 @@
+from selenium.webdriver.common import by
 from selenium.webdriver.common.by import By
 
 
@@ -18,6 +19,8 @@ class LoginPageLocators:
 class ProductPageLocators:
     BUTTON_ADD_TO_BASKET = (By.CLASS_NAME, 'btn-add-to-basket')
     BUTTON_VIEW_BASKET = (By.CSS_SELECTOR, '.btn-group > .btn')
+    CLEAR_BASKET = (By.CSS_SELECTOR, '#content_inner p')
+    BUTTON_CKECKOUT = (By.CLASS_NAME, 'btn-primary')
     BOOK_NAME = (By.CSS_SELECTOR, '.product_main h1')
     BOOK_PRICE = (By.CSS_SELECTOR, '.product_main > .price_color')
     ALERT_MESSAGE = (By.CSS_SELECTOR, "div.alert:nth-child(1) strong")

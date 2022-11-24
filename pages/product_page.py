@@ -11,10 +11,6 @@ class ProductPage(BasePage):
         #self.should_be_message_contain_book_name()
         #self.should_be_message_contain_the_same_price()
 
-    def go_to_basket(self):
-        basket = self.browser.find_element(*ProductPageLocators.BUTTON_VIEW_BASKET)
-        basket.click()
-
     def should_be_message_contain_book_name(self):
         book_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME).text
         message = self.browser.find_element(*ProductPageLocators.ALERT_MESSAGE).text
